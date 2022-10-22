@@ -8,11 +8,14 @@
 <body>
 <div class = 'container'>
     <h1>Вход в систему</h1>
-    <form action="/your-name/" method="post">
-        <label for="your_name">Your name: </label>
-        <input id="your_name" type="text" name="your_name" >
+    <form method="post">
+        {% csrf_token %}
+        {{ form.login }}
+        {{ form.passwords }}
+        <label>Your name: </label>
+        <input type="text" >
         <label>Your password</label>
-        <input id = "your_password" type = "text" name="your_password">
+        <input type = "text" >
         <input type="submit" value="Войти">
     </form>
 </div>
