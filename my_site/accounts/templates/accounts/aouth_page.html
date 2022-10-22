@@ -8,13 +8,13 @@
 <body>
 <div class = 'container'>
     <h1>Вход в систему</h1>
-    <form action="/your-name/" method="post">
-        <label for="your_name">Your name: </label>
-        <input id="your_name" type="text" name="your_name" >
-        <label>Your password</label>
-        <input id = "your_password" type = "text" name="your_password">
-        <input type="submit" value="Войти">
+    {% block content %}
+    <form  method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type = 'submit'>Log in</button>
     </form>
+    {% endblock content %}
 </div>
 </body>
 </html>
